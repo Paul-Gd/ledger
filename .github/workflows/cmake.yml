@@ -196,3 +196,8 @@ jobs:
           # BaselineTest_opt-output : Outputing to /dev/stderr, probably unsupported by Emscripten.
           ctest --force-new-ctest-process --output-on-failure \
             -E '_py$|DocTestsTest_ledger3|RegressTest_BF3C1F82|BaselineTest_opt-output'
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: build/
